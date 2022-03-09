@@ -199,20 +199,19 @@ Let’s use the extension to connect to the Squid http proxy by entering in the 
 
 # 11. Blue Team Defense Strategy (for SickOS 1.1)
 
-## Passwords
-  - Wolf CMS:
+## **Passwords**
   - Only allow authenticated users to connect and use the proxy.
   - Changing, at least, the default login password to Wolf CMS.
       
-## SickOS:
+## **SickOS:**
   - Do not reuse the same password as the database - john@123
 
-## Sanitizing GET Requests
+## **Sanitizing GET Requests**
   - Sanitize input values … quick way to do in php
   - Block php files from running commands
 
-## Permissions
+## **Permissions**
   - Make config.php file only readable and writable to sudo users
 
-## Updating/Patching
+## **Updating/Patching**
  - Lastly, run ‘sudo apt update && sudo apt upgrade’ to make sure your Ubuntu is updated
