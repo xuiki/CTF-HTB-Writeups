@@ -26,7 +26,7 @@ Not shown: 997 filtered ports PORT STATE SERVICE VERSION
 8080/tcp closed http-proxy MAC Address: 08:00:27:AB:F1:24 (Oracle VirtualBox virtual NIC) Service Info: 05: Linux; CPE: cpe:/o:linux:linux kernel
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ . Nmap done: 1 IP address (1 host up) scanned in 15.92 seconds
 ```
-
+-----------------------------------------
 # 2. Proxy
 - FoxyProxy is a Firefox extension which automatically switches an internet connection across one or more proxy servers based on URL patterns; put simply, FoxyProxy automates the manual process of editing Firefox's Connection Settings dialog.
 Let’s use the extension to connect to the Squid http proxy by entering in the box’s IP address and Port 3128. We are able to connect to the proxy server without any type of authentication. Then we’re able to access the running web service, which is just a blank page with text.
@@ -35,6 +35,8 @@ Let’s use the extension to connect to the Squid http proxy by entering in the 
 ![img](https://i.ibb.co/xMzxv0t/Screenshot-2.png)
 
 ![img](https://i.ibb.co/dM4qF3n/Screenshot-1.png)
+
+-----------------------------------------
 
 # 3. Dirb
 - The tool ‘dirb’ (with -p specified) lists a few 200 codes for you to explore. The page robots.txt shows a disallow on /wolfcms/ therefore let’s look further into the box’s CMS. 
