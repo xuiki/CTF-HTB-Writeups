@@ -66,4 +66,4 @@ Let’s use the extension to connect to the Squid http proxy by entering in the 
 - In this PHP script, we set a function which checks if a variable is specified and not ‘NULL’ in a HTTP GET request. Then the ‘shell_exec’ function will execute commands via a shell, after a variable is specified (cmd); commands are positioned after cmd=. The php script executes and displays the results on the web page.
 
   ![img](https://i.ibb.co/BV2MZ3b/Screenshot-2.png)
-  > This would execute commands on the server's backend that allow us to run commands on the box. For example, you can try cmd=pwd and it will return the current file path. (Note: We are still connected through the proxy.)
+  > This would execute commands on the server's backend that allow us to run commands on the box. For example, you can try cmd=pwd and it will return the current file path. (Note: We are still connected through the proxy.) ![img](https://i.ibb.co/7V9DLTg/Screenshot-1.png)
