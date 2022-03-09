@@ -48,4 +48,7 @@ Let’s use the extension to connect to the Squid http proxy by entering in the 
 (Wolf CMS Documentation: https://wolf-cms.readthedocs.io/en/latest/getting-started/installation/)
 
 ![img](https://i.ibb.co/pWqgzGN/Screenshot-3.png)
-> + http://192.168.56.11/wolfcms/config (CODE:200|SIZE:403)
+> http://192.168.56.11/wolfcms/config (CODE:200|SIZE:403)
+-----------------------------------------
+
+# 4. Wolf CMS Login
