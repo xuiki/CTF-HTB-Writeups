@@ -41,3 +41,5 @@ Let’s use the extension to connect to the Squid http proxy by entering in the 
 
 # 3. Dirb
 - The tool ‘dirb’ (with -p specified) lists a few 200 codes for you to explore. The page robots.txt shows a disallow on /wolfcms/ therefore let’s look further into the box’s CMS. 
+
+![img](https://i.ibb.co/jv1s4hd/Screenshot-1.png)
