@@ -18,9 +18,9 @@
 (kali@kali) - [~] $ sudo nmap -sV 192.168.56.11 Starting Nmap 7.91 ( https://nmap.org) at 2022-02-19 15:51 EST Nmap scan report for 192.168.56.11 Host is up (0.00031s latency) Not shown: 997 filtered ports PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 5.9p1 Debian Subuntul.1 (Ubuntu Linux; protocol 2.0) 3128/tcp open http proxy Squid http proxy 3.1.19 8080/tcp closed http-proxy MAC Address: 08:00:27:AB:F1:24 (Oracle VirtualBox virtual NIC) Service Info: 05: Linux; CPE: cpe:/o:linux:linux kernel
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ . Nmap done: 1 IP address (1 host up) scanned in 15.92 seconds
 ```
-> 22/tcp open ssh OpenSSH 5.9p1
-> 3128/tcp open http proxy Squid http proxy 3.1.19
-> 8080/tcp closed http-proxy
+> 22/tcp open ssh OpenSSH 5.9p1 | 
+> 3128/TCP Open HTTP Proxy Squid http proxy 3.1.19 | 
+> 8080/TCP Closed HTTP-Proxy
 
 # 2. Proxy
 - FoxyProxy is a Firefox extension which automatically switches an internet connection across one or more proxy servers based on URL patterns; put simply, FoxyProxy automates the manual process of editing Firefox's Connection Settings dialog.
