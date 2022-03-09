@@ -24,4 +24,5 @@ Let’s use the extension to connect to the Squid http proxy by entering in the 
 
 
 ![img](https://i.ibb.co/xMzxv0t/Screenshot-2.png)
+
 ![img](https://i.ibb.co/dM4qF3n/Screenshot-1.png)
