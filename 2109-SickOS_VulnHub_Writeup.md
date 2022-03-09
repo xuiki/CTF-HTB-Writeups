@@ -21,4 +21,7 @@ Service detection performed. Please report any incorrect results at https://nmap
 # 2. Proxy
 - FoxyProxy is a Firefox extension which automatically switches an internet connection across one or more proxy servers based on URL patterns; put simply, FoxyProxy automates the manual process of editing Firefox's Connection Settings dialog.
 Let’s use the extension to connect to the Squid http proxy by entering in the box’s IP address and Port 3128. We are able to connect to the proxy server without any type of authentication. Then we’re able to access the running web service, which is just a blank page with text.
+
+
 ![img](https://i.ibb.co/xMzxv0t/Screenshot-2.png)
+![img](https://i.ibb.co/dM4qF3n/Screenshot-1.png)
