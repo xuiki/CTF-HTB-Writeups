@@ -67,3 +67,7 @@ Let’s use the extension to connect to the Squid http proxy by entering in the 
 
   ![img](https://i.ibb.co/BV2MZ3b/Screenshot-2.png)
   > This would execute commands on the server's backend that allow us to run commands on the box. For example, you can try cmd=pwd and it will return the current file path. (Note: We are still connected through the proxy.) ![img](https://i.ibb.co/7V9DLTg/Screenshot-1.png)
+
+- However, you will soon find out that the current user does not have admin/sudo privileges. 
+- Back under the Files tab, it seems we can change file permissions!
+  ![img](https://i.ibb.co/ThmPYTz/Screenshot-3.png)
