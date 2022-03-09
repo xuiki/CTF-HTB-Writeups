@@ -181,18 +181,18 @@ Let’s use the extension to connect to the Squid http proxy by entering in the 
  
   - Now we want to create persistence by creating a new user ‘ukraine’ by entering ‘sudo adduser ukraine’.
 
-  > ![img](https://i.ibb.co/kHs2h4k/Screenshot-1.png)
+    > ![img](https://i.ibb.co/kHs2h4k/Screenshot-1.png)
 
   - Then we give ‘ukraine’ admin privileges by adding it to the sudo group by entering ‘sudo usermod -aG sudo ukraine’. Finally, we can test sudo privileges by running ‘sudo cat /etc/shadow’; and it works.
 
-  > ![img](https://i.ibb.co/VHQ07vf/Screenshot-2.png)
+    > ![img](https://i.ibb.co/VHQ07vf/Screenshot-2.png)
 
 -----------------------------------------
 
 # 10. Owning the Box
   - In order to prove that we have successfully gained root access, the creator on Vulnhub wanted us to cat the file /root/a0216ea4d51874464078c618298b1367.txt
 
-  > ![img](https://i.ibb.co/TKj9F4m/Screenshot-3.png)
+    > ![img](https://i.ibb.co/TKj9F4m/Screenshot-3.png)
 
 -----------------------------------------
 -----------------------------------------
