@@ -150,20 +150,20 @@ Let’s use the extension to connect to the Squid http proxy by entering in the 
   wolf
   ```
  - Now let’s ‘cat’ the file to see if there’s anything useful.
-  ```
-  $ cat config.php 
-  <?php
-  // Database information: I 
-  // for SQLite, use sqlite:/tmp/wolf.db (SQLite 3)
-  // The path can only be absolute path or memory: 
-  // For more info look at: www.php.net/pdo
-  // Database settings: 
-  define('DB_DSN', 'mysql:dbname=wolf;host=localhost;port=3306'); 
-  define('DB USER', 'root'); 
-  define('DB PASS', 'john@123'); 
-  define('TABLE_PREFIX', '');
-  ```
-  > root:john@123 looks good.
+    ```
+    $ cat config.php 
+    <?php
+    // Database information: I 
+    // for SQLite, use sqlite:/tmp/wolf.db (SQLite 3)
+    // The path can only be absolute path or memory: 
+    // For more info look at: www.php.net/pdo
+    // Database settings: 
+    define('DB_DSN', 'mysql:dbname=wolf;host=localhost;port=3306'); 
+    define('DB USER', 'root'); 
+    define('DB PASS', 'john@123'); 
+    define('TABLE_PREFIX', '');
+    ```
+      > root:john@123 looks good.
 -----------------------------------------
  # 8. Logging In 
   
