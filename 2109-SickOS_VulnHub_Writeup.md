@@ -133,6 +133,7 @@ Let’s use the extension to connect to the Squid http proxy by entering in the 
   Permission denied find: /var/cache/ldconfig': 
   Permission denied /var/www/wolfcms/config.php find: 7 lost+found': Permission denied
   ```
+    > `Permission denied /var/www/wolfcms/config.php find: 7 lost+found': Permission denied`
 - Now let’s ‘cd’ to it. And using ‘ls’ we see the config.php file listed.
   ```
   $ cd /var/www/wolfcms 
