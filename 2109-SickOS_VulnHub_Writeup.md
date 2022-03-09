@@ -169,7 +169,7 @@ Let’s use the extension to connect to the Squid http proxy by entering in the 
   
   - Let’s ‘cat’ the /etc/passwd file to see all users. It’s not a long list so we could brute force each username with ‘john@123’... However, by knowing that new users added to Ubuntu systems start with a UID of 1000 and up, let’s try the user sickos. And lucky for us, the password works!
     ```
-    $cat /etc/passwd
+    $ cat /etc/passwd
     sickos:x:1000:1000:sickos,,,:/home/sickos:/bin/bash
     ```
     ![img](https://i.ibb.co/ypvR4TW/Screenshot-1.png)
