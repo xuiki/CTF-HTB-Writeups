@@ -70,4 +70,5 @@ Let’s use the extension to connect to the Squid http proxy by entering in the 
 
 - However, you will soon find out that the current user does not have admin/sudo privileges. 
 - Back under the Files tab, it seems we can change file permissions!
+
   ![img](https://i.ibb.co/ThmPYTz/Screenshot-3.png)
