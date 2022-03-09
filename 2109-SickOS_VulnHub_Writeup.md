@@ -10,5 +10,5 @@
    (kali@kali)-[~] $ nmap -sn 192.168.56.0/24 Starting Nmap 7.91 
    ( https://nmap.org ) at 2022-02-19 15:14 ESTIU Nmap scan report for (192.168.56.1) Host is up (0.00024s latency). Nmap scan report for 192.168.56.3 cm Host is up (0.00013s        latency). Nmap done: 256 IP addresses (2 hosts up) scanned in 2.97 seconds
   ```
-- 192.168.56.11 is identified as SickOS. (.1 is the host machine, .2 is the VirtualBox router (https://router-network.com/ip/192-168-56-2), and .3 is Kali.)
+  > 192.168.56.11 is identified as SickOS. (.1 is the host machine, .2 is the VirtualBox router (https://router-network.com/ip/192-168-56-2), and .3 is Kali.)
 
