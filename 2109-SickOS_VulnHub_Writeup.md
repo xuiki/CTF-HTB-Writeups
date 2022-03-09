@@ -2,7 +2,6 @@
 -----------------------------------------
 - OS (Box): Ubuntu (SickOS 1.1 - https://www.vulnhub.com/entry/sickos-11,132/)
 - Objective: Obtain root user, and find flag in /root/ directory (without using any walkthroughs).
-
 -----------------------------------------
 
 # 1. Nmap
@@ -52,3 +51,5 @@ Let’s use the extension to connect to the Squid http proxy by entering in the 
 -----------------------------------------
 
 # 4. Wolf CMS Login
+- Regarding from the Wolf CMS’s documentation, we find ‘wolfcms/?/admin/login’ which is the admin login panel. Using the default credentials admin:admin, we can access the CMS as admin. Click around a bit (to understand how the CMS works) and you will find a page that allows file uploading.
+![img](https://i.ibb.co/BT31Mx2/Screenshot-1.png)
