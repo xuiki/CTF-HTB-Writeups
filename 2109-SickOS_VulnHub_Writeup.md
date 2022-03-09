@@ -83,3 +83,7 @@ Let’s use the extension to connect to the Squid http proxy by entering in the 
   ```
   
   > This Bash UDP Reverse shell payload can be found on https://github.com/swisskyrepo/PayloadsAllTheThings
+
+- We will edit our reverse shell payload by editing the IP Address to ours along with the specified port and change our malicious file permissions to 0777.
+
+  ![img](https://i.ibb.co/jvJqYBH/Screenshot-1.png)
