@@ -217,4 +217,3 @@ Let’s use the extension to connect to the Squid http proxy by entering in the 
 ## **Updating/Patching**
  - Lastly, run ‘sudo apt update && sudo apt upgrade’ to make sure your Ubuntu is updated
 -----------------------------------------
-~ Project APP (Anthony L, Peter T and Paul N).
