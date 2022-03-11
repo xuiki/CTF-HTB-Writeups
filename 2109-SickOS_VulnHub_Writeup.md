@@ -102,7 +102,6 @@
   -----------------------------------------
   
 # 7. Config.php
-
 - Remember the config.php file earlier (refer to Step #3)? Let’s use ‘find / -name config.php’ (sudo find is not necessary here) to find it.
 
   ![img](https://i.ibb.co/D5jysjh/Screenshot-6.png)
@@ -111,11 +110,10 @@
 
   ![img](https://i.ibb.co/nDws2PZ/Screenshot-7.png)
 
- - Now let’s ‘cat’ the file to see if there’s anything useful.
+- Now let’s ‘cat’ the file to see if there’s anything useful.
 
   ![img](https://i.ibb.co/gWZfgqf/Screenshot-8.png)
-  
-    > `root:john@123` looks good.
+    > root:john@123 looks good.
 
 -----------------------------------------
  # 8. Logging In 
