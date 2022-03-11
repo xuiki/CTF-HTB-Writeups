@@ -38,7 +38,7 @@
 (Wolf CMS Documentation: https://wolf-cms.readthedocs.io/en/latest/getting-started/installation/)
 
   ![img](https://i.ibb.co/pWqgzGN/Screenshot-3.png)
-  > ![img](https://i.ibb.co/cN1T01W/Screenshot-5.png)
+  ![img](https://i.ibb.co/cN1T01W/Screenshot-5.png)
 
 -----------------------------------------
 
