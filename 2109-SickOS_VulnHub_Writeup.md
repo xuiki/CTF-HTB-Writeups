@@ -1,7 +1,7 @@
-# SickOS 1.1 Walkthrough (Getting root)
+# SickOS 1.1 Walkthrough
 -----------------------------------------
 - OS (Box): Ubuntu (SickOS 1.1 - https://www.vulnhub.com/entry/sickos-11,132/)
-- Objective: Obtain root user, and find flag in /root/ directory (without using any walkthroughs).
+- Objective: Obtain root user, and find flag in /root/ directory
 -----------------------------------------
 
 # 1. Nmap
