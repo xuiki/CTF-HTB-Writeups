@@ -114,6 +114,8 @@
  - Now let’s ‘cat’ the file to see if there’s anything useful.
 
   ![img](https://i.ibb.co/gWZfgqf/Screenshot-8.png)
+  
+    > `root:john@123` looks good.
 
 -----------------------------------------
  # 8. Logging In 
