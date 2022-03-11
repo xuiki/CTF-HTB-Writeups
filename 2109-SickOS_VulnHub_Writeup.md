@@ -7,6 +7,7 @@
 # 1. Nmap
 - **We could not find the IP address for the box using ‘nmap -sn’ or ‘-Pn’ scan. But using sudo it is possible to scan for the box.**
   
+  ![img](https://i.ibb.co/fFmVCsy/Screenshot-9.png)
   ![img](https://i.ibb.co/kQQvVtZ/Screenshot-2.png)
   
  - 192.168.56.11 is identified as SickOS. (.1 is the host machine, .2 is the VirtualBox router (https://router-network.com/ip/192-168-56-2), and .3 is Kali.)
