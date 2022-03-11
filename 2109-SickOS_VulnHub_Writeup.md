@@ -34,11 +34,15 @@
 - The tool ‘dirb’ (with -p specified) lists a few 200 codes for you to explore. The page robots.txt shows a disallow on /wolfcms/ therefore let’s look further into the box’s CMS. 
 
   ![img](https://i.ibb.co/jv1s4hd/Screenshot-1.png)
+  ![img](https://i.ibb.co/z57ZtBv/Screenshot-1.png)
 
 - Browsing online through Wolf CMS’s documentation, I noticed a config.php file that Wolf CMS creates during installation. So let’s dirb the /wolfcms directory to see if it’s there. And there it is.
 (Wolf CMS Documentation: https://wolf-cms.readthedocs.io/en/latest/getting-started/installation/)
 
   ![img](https://i.ibb.co/pWqgzGN/Screenshot-3.png)
+  
+- However, it’s not too useful because the URL returns a blank page.
+
   ![img](https://i.ibb.co/cN1T01W/Screenshot-5.png)
 
 -----------------------------------------
