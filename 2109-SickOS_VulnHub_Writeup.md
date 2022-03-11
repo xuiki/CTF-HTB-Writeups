@@ -114,6 +114,7 @@
  # 8. Logging In 
   
   - Let’s ‘cat’ the /etc/passwd file to see all users. It’s not a long list so we could brute force each username with ‘john@123’... However, by knowing that new users added to Ubuntu systems start with a UID of 1000 and up, let’s try the user sickos. And lucky for us, the password works!
+
     ```
     $ cat /etc/passwd
     sickos:x:1000:1000:sickos,,,:/home/sickos:/bin/bash
@@ -147,19 +148,24 @@
 # 11. Blue Team Defense Strategy (for SickOS 1.1)
 
 ## **Passwords**
+
   - Only allow authenticated users to connect and use the proxy.
   - Changing, at least, the default login password to Wolf CMS.
       
 ## **SickOS:**
+
   - Do not reuse the same password as the database - john@123
 
 ## **Sanitizing GET Requests**
+
   - Sanitize input values … quick way to do in php
   - Block php files from running commands
 
 ## **Permissions**
+
   - Make config.php file only readable and writable to sudo users
 
 ## **Updating/Patching**
+
  - Lastly, run ‘sudo apt update && sudo apt upgrade’ to make sure your Ubuntu is updated
 -----------------------------------------
